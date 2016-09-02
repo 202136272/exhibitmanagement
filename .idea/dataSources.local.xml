@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - exhibitmanagement@localhost" uuid="48540ddf-1a31-44b3-9c58-fd93e26163b7">
+    <data-source name="PostgreSQL - postgres@localhost" uuid="0faa2c84-b71e-4846-b0d5-ec7f4b436836">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <schema-pattern>exhibitmanagement.*</schema-pattern>
-      <default-schemas>exhibitmanagement.*</default-schemas>
+      <schema-pattern>postgres.pg_catalog postgres.public</schema-pattern>
+      <default-schemas>postgres.public</default-schemas>
     </data-source>
   </component>
 </project>
