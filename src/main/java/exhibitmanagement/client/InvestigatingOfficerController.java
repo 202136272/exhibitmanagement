@@ -16,6 +16,7 @@ import java.util.List;
  * Created by Bonga on 8/14/2016.
  */
 @RestController
+@RequestMapping("/officer")
 public class InvestigatingOfficerController  {
 
     // Inject Service
@@ -23,7 +24,7 @@ public class InvestigatingOfficerController  {
     private InvestigatingOfficerService officerService;
 
     //-------------------Retrieve Single Story--------------------------------------------------------
-    @RequestMapping(value = "/officer/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<InvestigatingOfficer> getStation(@PathVariable("id") long id) {
         InvestigatingOfficer officer = officerService.readById(id);
         if (officer == null) {
@@ -33,7 +34,7 @@ public class InvestigatingOfficerController  {
     }
 
     //------------------- Delete a Story --------------------------------------------------------
-    @RequestMapping(value = "/officer/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<InvestigatingOfficer> deleteOfficer(@PathVariable("id") long id) {
         InvestigatingOfficer officer = officerService.readById(id);
         if (officer == null) {
@@ -44,7 +45,7 @@ public class InvestigatingOfficerController  {
     }
 
     //-------------------Retrieve All Stories--------------------------------------------------------
-    @RequestMapping(value = "/officer/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<InvestigatingOfficer>> getOfficer() {
         List<InvestigatingOfficer> exhibit = officerService.readAll();
         if(exhibit.isEmpty()){
@@ -56,7 +57,7 @@ public class InvestigatingOfficerController  {
 
     //-------------------Create a Story--------------------------------------------------------
 
-    @RequestMapping(value = "/officer/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createOfficer(@RequestBody InvestigatingOfficer officer, UriComponentsBuilder ucBuilder) {
         officerService.create(officer);
         HttpHeaders headers = new HttpHeaders();

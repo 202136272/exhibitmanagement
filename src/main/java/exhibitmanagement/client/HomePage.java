@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Bonga on 8/9/2016.
  */
 @RestController
+@RequestMapping("/app")
 public class HomePage {
     @Autowired
 

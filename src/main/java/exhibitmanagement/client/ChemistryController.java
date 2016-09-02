@@ -16,6 +16,7 @@ import java.util.List;
  * Created by Bonga on 8/13/2016.
  */
 @RestController
+@RequestMapping("/chemistry")
 public class ChemistryController {
 
     // Inject Service
@@ -23,7 +24,7 @@ public class ChemistryController {
     private ChemistryService chemistryService;
 
     //-------------------Retrieve Single Story--------------------------------------------------------
-    @RequestMapping(value = "/chemistry/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Chemistry> getChemistry(@PathVariable("id") long id) {
         Chemistry chemistry = chemistryService.readById(id);
         if (chemistry == null) {
@@ -33,7 +34,7 @@ public class ChemistryController {
     }
 
     //------------------- Delete a Story --------------------------------------------------------
-    @RequestMapping(value = "/chemistry/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Chemistry> deleteChemistry(@PathVariable("id") long id) {
         Chemistry chemistry = chemistryService.readById(id);
         if (chemistry == null) {
@@ -44,7 +45,7 @@ public class ChemistryController {
     }
 
     //-------------------Retrieve All Stories--------------------------------------------------------
-    @RequestMapping(value = "/chemistry/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Chemistry>> getChemistry() {
         List<Chemistry> chemistry = chemistryService.readAll();
         if(chemistry.isEmpty()){
@@ -55,7 +56,7 @@ public class ChemistryController {
 
 
     //-------------------Create a Story--------------------------------------------------------
-    @RequestMapping(value = "/chemistry/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createChemistry(@RequestBody Chemistry chemistry, UriComponentsBuilder ucBuilder) {
         chemistryService.create(chemistry);
         HttpHeaders headers = new HttpHeaders();

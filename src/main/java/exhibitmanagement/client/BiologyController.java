@@ -16,6 +16,7 @@ import java.util.List;
  * Created by Bonga on 8/13/2016.
  */
 @RestController
+@RequestMapping("/biology")
 public class BiologyController {
 
     // Inject Service
@@ -23,7 +24,7 @@ public class BiologyController {
     private BiologyService biologyServiceService;
 
     //-------------------Retrieve Single Story--------------------------------------------------------
-    @RequestMapping(value = "/biology/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Biology> getBiology(@PathVariable("id") long id) {
             Biology biology = biologyServiceService.readById(id);
             if (biology == null) {
@@ -33,7 +34,7 @@ public class BiologyController {
     }
 
     //------------------- Delete a Story --------------------------------------------------------
-    @RequestMapping(value = "/biology/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Biology> deleteBiology(@PathVariable("id") long id) {
         Biology biology = biologyServiceService.readById(id);
         if (biology == null) {
@@ -45,7 +46,7 @@ public class BiologyController {
 
     //-------------------Retrieve All Stories--------------------------------------------------------
 
-    @RequestMapping(value = "/biology/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Biology>> getBiology() {
         List<Biology> biology = biologyServiceService.readAll();
         if(biology.isEmpty()){
@@ -57,7 +58,7 @@ public class BiologyController {
 
     //-------------------Create a Story--------------------------------------------------------
 
-    @RequestMapping(value = "/biology/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createBiology(@RequestBody Biology biology, UriComponentsBuilder ucBuilder) {
         biologyServiceService.create(biology);
         HttpHeaders headers = new HttpHeaders();

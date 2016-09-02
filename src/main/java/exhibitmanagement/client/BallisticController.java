@@ -16,13 +16,14 @@ import java.util.List;
  * Created by Bonga on 8/13/2016.
  */
 @RestController
+@RequestMapping("/ballistic")
 public class BallisticController {
     // Inject Service
     @Autowired
     private BallisticService ballisticService;
 
     //-------------------Retrieve Single Story--------------------------------------------------------
-    @RequestMapping(value = "/ballistic/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Ballistic> getBallistic(@PathVariable("id") long id) {
         Ballistic admin = ballisticService.readById(id);
         if (admin == null) {
@@ -32,7 +33,7 @@ public class BallisticController {
     }
 
     //------------------- Delete a Story --------------------------------------------------------
-    @RequestMapping(value = "/ballistic/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Ballistic> deleteBallistic(@PathVariable("id") long id) {
         Ballistic ballistic = ballisticService.readById(id);
         if (ballistic == null) {
@@ -43,7 +44,7 @@ public class BallisticController {
     }
 
     //-------------------Retrieve All Stories--------------------------------------------------------
-    @RequestMapping(value = "/ballistic/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Ballistic>> getBallistic() {
         List<Ballistic> ballistics = ballisticService.readAll();
         if(ballistics.isEmpty()){
@@ -53,11 +54,11 @@ public class BallisticController {
     }
 
     //-------------------Create a Story--------------------------------------------------------
-    @RequestMapping(value = "/ballistic/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createBallistic(@RequestBody Ballistic ballistic, UriComponentsBuilder ucBuilder) {
         ballisticService.create(ballistic);
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/ballistic/{id}").buildAndExpand(ballistic.getId()).toUri());
+        headers.setLocation(ucBuilder.path("/{id}").buildAndExpand(ballistic.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 

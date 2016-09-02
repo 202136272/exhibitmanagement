@@ -16,6 +16,7 @@ import java.util.List;
  * Created by Bonga on 8/14/2016.
  */
 @RestController
+@RequestMapping("/station")
 public class StationController {
 
     // Inject Service
@@ -23,7 +24,7 @@ public class StationController {
     private StationService stationService;
 
     //-------------------Retrieve Single Story--------------------------------------------------------
-    @RequestMapping(value = "/station/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Station> getStation(@PathVariable("id") long id) {
         Station station = stationService.readById(id);
         if (station == null) {
@@ -33,7 +34,7 @@ public class StationController {
     }
 
     //------------------- Delete a Story --------------------------------------------------------
-    @RequestMapping(value = "/station/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Station> deleteStation(@PathVariable("id") long id) {
         Station station = stationService.readById(id);
         if (station == null) {
@@ -45,7 +46,7 @@ public class StationController {
 
     //-------------------Retrieve All Stories--------------------------------------------------------
 
-    @RequestMapping(value = "/station/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Station>> getStation() {
         List<Station> station = stationService.readAll();
         if(station.isEmpty()){
@@ -55,7 +56,7 @@ public class StationController {
     }
 
     //-------------------Create a Story--------------------------------------------------------
-    @RequestMapping(value = "/station/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createStation(@RequestBody Station station, UriComponentsBuilder ucBuilder) {
         stationService.create(station);
         HttpHeaders headers = new HttpHeaders();

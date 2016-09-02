@@ -16,6 +16,7 @@ import java.util.List;
  * Created by Bonga on 8/9/2016.
  */
 @RestController
+@RequestMapping("/admin")
 public class AdministratorController {
 
     // Inject Service
@@ -23,7 +24,7 @@ public class AdministratorController {
     private AdministratorService adminService;
 
     //-------------------Retrieve Single Story--------------------------------------------------------
-    @RequestMapping(value = "/admin/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Administrator> getAdministrator(@PathVariable("id") long id) {
         Administrator admin = adminService.readById(id);
         if (admin == null) {
@@ -35,7 +36,7 @@ public class AdministratorController {
 
     //------------------- Delete a Story --------------------------------------------------------
 
-    @RequestMapping(value = "/admin/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Administrator> deleteAdministrator(@PathVariable("id") long id) {
         Administrator admin = adminService.readById(id);
         if (admin == null) {
@@ -47,7 +48,7 @@ public class AdministratorController {
 
     //-------------------Retrieve All Stories--------------------------------------------------------
 
-    @RequestMapping(value = "/admin/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Administrator>> getAdministrator() {
         List<Administrator> admin = adminService.readAll();
         if(admin.isEmpty()){
@@ -58,11 +59,11 @@ public class AdministratorController {
 
     //-------------------Create a Story API--------------------------------------------------------
 
-    @RequestMapping(value = "/admin/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createAdministrator(@RequestBody Administrator admin, UriComponentsBuilder ucBuilder) {
         adminService.create(admin);
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/admin/{id}").buildAndExpand(admin.getId()).toUri());
+        headers.setLocation(ucBuilder.path("/{id}").buildAndExpand(admin.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 

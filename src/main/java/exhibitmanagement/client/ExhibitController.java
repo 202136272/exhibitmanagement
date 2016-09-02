@@ -16,6 +16,7 @@ import java.util.List;
  * Created by Bonga on 8/13/2016.
  */
 @RestController
+@RequestMapping("/exhibit")
 public class ExhibitController {
 
     // Inject Service
@@ -23,7 +24,7 @@ public class ExhibitController {
     private ExhibitService exhibitService;
 
     //-------------------Retrieve Single Story--------------------------------------------------------
-    @RequestMapping(value = "/exhibit/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Exhibit> getExhibit(@PathVariable("id") long id) {
         Exhibit exhibit = exhibitService.readById(id);
         if (exhibit == null) {
@@ -33,7 +34,7 @@ public class ExhibitController {
     }
 
     //------------------- Delete a Story --------------------------------------------------------
-    @RequestMapping(value = "/exhibit/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Exhibit> deleteExhibit(@PathVariable("id") long id) {
         Exhibit exhibit = exhibitService.readById(id);
         if (exhibit == null) {
@@ -44,7 +45,7 @@ public class ExhibitController {
     }
 
     //-------------------Retrieve All Stories--------------------------------------------------------
-    @RequestMapping(value = "/exhibit/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Exhibit>> getExhibit() {
         List<Exhibit> exhibit = exhibitService.readAll();
         if(exhibit.isEmpty()){
@@ -54,7 +55,7 @@ public class ExhibitController {
     }
 
     //-------------------Create a Story--------------------------------------------------------
-    @RequestMapping(value = "/exhibit/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ResponseEntity<Void> createExhibit(@RequestBody Exhibit exhibit, UriComponentsBuilder ucBuilder) {
         exhibitService.create(exhibit);
         HttpHeaders headers = new HttpHeaders();
