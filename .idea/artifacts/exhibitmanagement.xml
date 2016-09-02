@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="exhibitmanagement">
+  <artifact type="jar" build-on-make="true" name="exhibitmanagement">
     <output-path>$PROJECT_DIR$/out/artifacts/exhibitmanagement</output-path>
-    <root id="root" />
+    <root id="archive" name="exhibitmanagement.jar" />
   </artifact>
 </component>
