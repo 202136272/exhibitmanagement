@@ -19,7 +19,7 @@ public class Station implements Serializable {
     private String address;
 
 
-    private Station()
+    public Station()
     {
 
     }

@@ -40,7 +40,7 @@ public class Chemistry implements Serializable {
         return effect;
     }
 
-    private Chemistry()
+    public Chemistry()
     {
 
     }

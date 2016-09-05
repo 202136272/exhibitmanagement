@@ -11,7 +11,6 @@ import java.io.Serializable;
 /**
  * Created by Bonga on 4/1/2016.
  */
-
 @Entity
 public class Ballistic implements Serializable {
 

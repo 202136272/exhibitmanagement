@@ -1,15 +1,13 @@
 package exhibitmanagement.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by Bonga on 4/2/2016.
  */
 @Entity
+//@Table(name = "ADMIN_ACCOUNT", schema="public")
 public class Administrator implements Serializable {
 
     @Id
@@ -33,7 +31,7 @@ public class Administrator implements Serializable {
         return persalNumber;
     }
 
-    private Administrator()
+    public Administrator()
     {
 
     }

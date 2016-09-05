@@ -31,6 +31,7 @@ public class AdministratorServiceImpl implements AdministratorService {
     public List<Administrator> readAll() {
         List<Administrator> result = new ArrayList<Administrator>();
         Iterable<Administrator> administrators = repository.findAll();
+
         for (Administrator admin : administrators) {
             result.add(admin);
         }

@@ -20,7 +20,7 @@ public class InvestigatingOfficer implements Serializable {
     private String rank;
     private String station;
 
-    private InvestigatingOfficer()
+    public InvestigatingOfficer()
     {
 
     }
