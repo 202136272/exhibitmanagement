@@ -3,6 +3,7 @@ package exhibitmanagement;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -18,13 +19,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 ///home/student/Documents/exhibitmanagement/src/main/resources/hibernate.cfg.xml
 @Configuration
 @ComponentScan(basePackages = "exhibitmanagement")
-//@EnableWebMvc
-@EnableAutoConfiguration
-//@EnableJpaRepositories
-//@PropertySource("classpath:application.properties")
-//@EnableTransactionManagement
-//@ImportResource({ "classpath:hibernate.cfg.xml" })
-//@SpringBootApplication
+@EnableWebMvc
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@EnableJpaRepositories
+@PropertySource("classpath:application.properties")
+@EnableTransactionManagement
+@ImportResource({ "classpath:hibernate.cfg.xml" })
+@SpringBootApplication
 public class App 
 {
     public static void main( String[] args )
