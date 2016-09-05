@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" build-on-make="true" name="exhibitmanagement">
-    <output-path>$PROJECT_DIR$/out/artifacts/exhibitmanagement</output-path>
+    <output-path>$PROJECT_DIR$/../apache-tomcat-7.0.70/bin</output-path>
     <root id="archive" name="exhibitmanagement.jar" />
   </artifact>
 </component>
