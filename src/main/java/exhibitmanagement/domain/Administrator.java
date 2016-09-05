@@ -7,14 +7,18 @@ import java.io.Serializable;
  * Created by Bonga on 4/2/2016.
  */
 @Entity
-//@Table(name = "ADMIN_ACCOUNT", schema="public")
+@Table(name = "administrator")
 public class Administrator implements Serializable {
 
     @Id
+    @Column(name="ID")
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
+    @Column(name="PERSAL_NUMBER")
     private  String persalNumber;
+    @Column(name="NAME")
     private  String name;
+    @Column(name="SURNAME")
     private String surname;
 
     public long getId() {

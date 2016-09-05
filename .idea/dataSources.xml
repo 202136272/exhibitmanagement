@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2704294732">
+  <component name="DataSourceManagerImpl" format="xml" hash="1397817610">
     <data-source source="LOCAL" name="PostgreSQL - postgres@localhost" uuid="5af93abd-0d2f-4389-abe8-59ce4363662a">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - d6v8r2mkeoq840@ec2-23-21-58-144.compute-1.amazonaws.com" uuid="e11b709e-9d6b-4274-a692-c9eeb6db12c0">
+    <data-source source="LOCAL" name="PostgreSQL - d69arregtvsbr2@ec2-54-235-126-62.compute-1.amazonaws.com" uuid="e11b709e-9d6b-4274-a692-c9eeb6db12c0">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-23-21-58-144.compute-1.amazonaws.com/d6v8r2mkeoq840?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ec2-54-235-126-62.compute-1.amazonaws.com:5432/d69arregtvsbr2?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
     </data-source>
   </component>
 </project>
