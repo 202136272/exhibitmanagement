@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - postgres@localhost" uuid="5af93abd-0d2f-4389-abe8-59ce4363662a">
+      <secret-storage>memory</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>postgres.*</schema-pattern>
+      <default-schemas>postgres.public</default-schemas>
+    </data-source>
+    <data-source name="PostgreSQL - d6v8r2mkeoq840@ec2-23-21-58-144.compute-1.amazonaws.com" uuid="e11b709e-9d6b-4274-a692-c9eeb6db12c0">
+      <secret-storage>memory</secret-storage>
+      <user-name>zhlnxqmdpggwhc</user-name>
+      <schema-pattern>d6v8r2mkeoq840.pg_catalog d6v8r2mkeoq840.public</schema-pattern>
+      <default-schemas>d6v8r2mkeoq840.public</default-schemas>
+    </data-source>
+  </component>
+</project>
