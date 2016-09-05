@@ -18,13 +18,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 ///home/student/Documents/exhibitmanagement/src/main/resources/hibernate.cfg.xml
 @Configuration
 @ComponentScan(basePackages = "exhibitmanagement")
-@EnableWebMvc
+//@EnableWebMvc
 @EnableAutoConfiguration
-@EnableJpaRepositories
-@PropertySource("classpath:application.properties")
-@EnableTransactionManagement
-@ImportResource({ "classpath:hibernate.cfg.xml" })
-@SpringBootApplication
+//@EnableJpaRepositories
+//@PropertySource("classpath:application.properties")
+//@EnableTransactionManagement
+//@ImportResource({ "classpath:hibernate.cfg.xml" })
+//@SpringBootApplication
 public class App 
 {
     public static void main( String[] args )
