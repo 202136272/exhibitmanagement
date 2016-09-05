@@ -13,5 +13,13 @@
         <property name="hibernate.cache.use_second_level_cache">true</property>
         <property name="hibernate.cache.use_query_cache">true</property>
         <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+        <mapping class="exhibitmanagement.domain.Administrator"></mapping>
+        <mapping class="exhibitmanagement.domain.Ballistic"></mapping>
+        <mapping class="exhibitmanagement.domain.Biology"></mapping>
+        <mapping class="exhibitmanagement.domain.Chemistry"></mapping>
+        <mapping class="exhibitmanagement.domain.Exhibit"></mapping>
+        <mapping class="exhibitmanagement.domain.InvestigatingOfficer"></mapping>
+        <mapping class="exhibitmanagement.domain.Station"></mapping>
     </session-factory>
 </hibernate-configuration>
